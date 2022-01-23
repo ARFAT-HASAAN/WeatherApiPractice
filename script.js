@@ -18,12 +18,13 @@ const setInfo = (id, text) => {
 };
 
 const sendData = (data) => {
-  setInfo("city", data.name);
-  setInfo("temp", data.main.temp);
-  setInfo("weather", data.weather[0].main);
   const img = document.getElementById("img");
   img.setAttribute(
     "src",
     `http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png `
   );
+
+  setInfo("city", data.name);
+  setInfo("temp", data.main.temp);
+  setInfo("weather", data.weather[0].main);
 };
